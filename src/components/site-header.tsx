@@ -37,7 +37,13 @@ export function SiteHeader() {
             href="/"
             aria-label={site.brand.name}
             className="flex items-center gap-3 group"
-            onClick={() => track("cta_click", { id: "header_logo", location: "header" })}
+            onClick={() => {
+              track("cta_click", { id: "header_logo", location: "header" });
+              // If already on the homepage, scroll back to the top instead of a no-op
+              if (typeof window !== "undefined" && window.location.pathname === "/") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
           >
             <span
               className={`block relative w-[44px] h-[44px] md:w-[52px] md:h-[52px] rounded-full overflow-hidden transition-all ${
@@ -62,7 +68,7 @@ export function SiteHeader() {
                 Highlights
               </span>
               <span
-                className={`hidden sm:block text-[10px] tracking-[0.22em] uppercase mt-1 transition-colors ${
+                className={`hidden sm:block text-[10px] tracking-[0.22em] uppercase mt-2.5 transition-colors ${
                   scrolled ? "text-ash" : "text-cream/75"
                 }`}
               >

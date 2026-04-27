@@ -1,3 +1,4 @@
+import { ScrollTopOnLoad } from "@/components/home/scroll-top-on-load";
 import { Hero } from "@/components/home/hero";
 import { TrustStrip } from "@/components/home/trust-strip";
 import { Pillars } from "@/components/home/pillars";
@@ -10,6 +11,7 @@ import { ClosingCTA } from "@/components/home/closing-cta";
 export default function HomePage() {
   return (
     <>
+      <ScrollTopOnLoad />
       <Hero />
       <TrustStrip />
       <Pillars />
