@@ -7,6 +7,7 @@ import { DiningSection } from "@/components/home/dining-section";
 import { Testimonials } from "@/components/home/testimonials";
 import { EventsSection } from "@/components/home/events-section";
 import { ClosingCTA } from "@/components/home/closing-cta";
+import { Reveal } from "@/components/shared/reveal";
 
 export default function HomePage() {
   return (
@@ -14,12 +15,24 @@ export default function HomePage() {
       <ScrollTopOnLoad />
       <Hero />
       <TrustStrip />
-      <Pillars />
-      <FeaturedRooms />
-      <DiningSection />
-      <Testimonials />
-      <EventsSection />
-      <ClosingCTA />
+      <Reveal as="section">
+        <Pillars />
+      </Reveal>
+      <Reveal as="section">
+        <FeaturedRooms />
+      </Reveal>
+      <Reveal as="section">
+        <DiningSection />
+      </Reveal>
+      <Reveal as="section">
+        <Testimonials />
+      </Reveal>
+      <Reveal as="section">
+        <EventsSection />
+      </Reveal>
+      <Reveal as="section">
+        <ClosingCTA />
+      </Reveal>
     </>
   );
 }

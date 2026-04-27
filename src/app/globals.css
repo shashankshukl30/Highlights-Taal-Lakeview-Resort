@@ -111,12 +111,32 @@ html.lenis body { height: auto; }
 
 h1, h2, h3, .display {
   font-family: var(--font-display);
-  letter-spacing: -0.02em;
-  line-height: 1.04;
+  letter-spacing: -0.022em;
+  line-height: 1.02;
   font-weight: 400;
+  font-feature-settings: "ss01", "ss02";
+  font-optical-sizing: auto;
 }
 
-h1 { font-feature-settings: "ss01"; }
+h1 {
+  font-feature-settings: "ss01", "ss02";
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+h2 {
+  font-variation-settings: "opsz" 96, "SOFT" 30;
+}
+h3 {
+  font-variation-settings: "opsz" 36;
+}
+
+/* Italic display variants — for the "above the lake" / "every morning" accents.
+   Uses Fraunces' italic axis for elegance instead of regular italic style. */
+.font-display .italic,
+h1 .italic, h2 .italic, h3 .italic,
+.display .italic {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+}
 
 .eyebrow {
   font-family: var(--font-sans);
@@ -272,11 +292,19 @@ h1 { font-feature-settings: "ss01"; }
 .btn-primary {
   background: var(--color-sunset);
   color: var(--color-paper);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.18) inset, 0 8px 24px -10px rgba(230, 148, 69, 0.6);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.22) inset,
+    0 0 0 1px rgba(182, 110, 38, 0.20),
+    0 10px 28px -12px rgba(230, 148, 69, 0.55),
+    0 2px 6px -2px rgba(182, 110, 38, 0.25);
 }
 .btn-primary:hover {
   background: var(--color-sunset-deep);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.14) inset, 0 14px 32px -12px rgba(182, 110, 38, 0.7);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.16) inset,
+    0 0 0 1px rgba(182, 110, 38, 0.30),
+    0 18px 38px -14px rgba(182, 110, 38, 0.7),
+    0 4px 10px -2px rgba(182, 110, 38, 0.3);
 }
 
 .btn-ghost {
@@ -377,24 +405,28 @@ h1 { font-feature-settings: "ss01"; }
   border: 1px solid var(--color-line);
   border-radius: 1.25rem;
   overflow: hidden;
+  box-shadow: 0 1px 2px rgba(8, 46, 59, 0.04);
   transition:
-    transform 0.6s var(--ease-card),
-    box-shadow 0.6s var(--ease-card),
-    border-color 0.4s var(--ease-strip);
+    transform 0.7s var(--ease-card),
+    box-shadow 0.7s var(--ease-card),
+    border-color 0.5s var(--ease-strip);
 }
 .card-room:hover {
   transform: translateY(-6px);
-  box-shadow: 0 36px 64px -34px rgba(8, 46, 59, 0.32);
-  border-color: rgba(230, 148, 69, 0.5);
+  box-shadow:
+    0 1px 2px rgba(8, 46, 59, 0.04),
+    0 28px 48px -28px rgba(8, 46, 59, 0.22),
+    0 60px 120px -40px rgba(8, 46, 59, 0.18);
+  border-color: rgba(230, 148, 69, 0.45);
 }
 .card-room .media {
   position: relative;
   overflow: hidden;
 }
 .card-room .media img {
-  transition: transform 1.2s var(--ease-card);
+  transition: transform 1.6s var(--ease-card);
 }
-.card-room:hover .media img { transform: scale(1.06); }
+.card-room:hover .media img { transform: scale(1.05); }
 
 .card-editorial {
   position: relative;

@@ -63,9 +63,6 @@ export const metadata: Metadata = {
     description: site.brand.longTagline,
   },
   robots: { index: true, follow: true },
-  icons: {
-    icon: [{ url: "/logo-mark.svg", type: "image/svg+xml" }],
-  },
 };
 
 export default function RootLayout({

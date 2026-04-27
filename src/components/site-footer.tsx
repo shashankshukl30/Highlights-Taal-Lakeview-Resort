@@ -109,7 +109,22 @@ export function SiteFooter() {
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             <span>© {new Date().getFullYear()} Highlights Taal Lakeview Resort.</span>
             <span className="hidden md:inline opacity-50">·</span>
-            <span>Designed and built by Digiocular.</span>
+            <span>
+              Designed and built with{" "}
+              <span aria-label="love" className="text-sunset" role="img">
+                ♥
+              </span>{" "}
+              by{" "}
+              <a
+                href="https://digiocular.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cream/85 hover:text-cream underline-offset-4 hover:underline transition-colors"
+              >
+                Digiocular
+              </a>
+              .
+            </span>
           </div>
           <div className="flex items-center gap-5 text-cream/65">
             {site.social.facebook && (
