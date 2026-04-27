@@ -1,29 +1,23 @@
 /**
- * Single source of truth for brand, contact, nav, social proof.
- *
- * Edit this file (not the components) to change site-wide copy. Components
- * read from `site` and degrade gracefully if a field is empty.
- *
- * Phone numbers / email / addresses are placeholder until the client confirms.
- * Search for "TODO:" before launch.
+ * Single source of truth — brand, contact, nav, social proof.
+ * Edit copy here, never in components.
  */
 
 export const site = {
   brand: {
     name: "Highlights Taal Lakeview Resort",
     shortName: "Highlights",
-    tagline: "A quiet stay above the lake.",
+    tagline: "Where Taal greets every morning.",
     longTagline:
-      "A modern Filipino retreat above Taal — five rooms, an infinity edge over the volcano, and an events lawn the village still talks about.",
+      "A modern Filipino resort high above Taal Lake — a chef's kitchen, a lounge that holds the family, and an infinity pool with a view that does the rest.",
     domain: "highlightslakeview.com",
-    established: 2018,
   },
 
   contact: {
     // TODO: confirm with client before launch.
     phonePrimary: "+63 905 576 2382",
     phoneDisplayPrimary: "+63 905 576 2382",
-    whatsapp: "639055762382", // digits only, country code prefixed
+    whatsapp: "639055762382",
     whatsappDisplay: "+63 905 576 2382",
     email: "stay@highlightslakeview.com",
     eventsEmail: "events@highlightslakeview.com",
@@ -48,78 +42,76 @@ export const site = {
       "https://www.google.com/maps/search/?api=1&query=Highlights+Taal+Lakeview+Resort",
     facebook: "https://www.facebook.com/HighlightsResort",
     rating: "4.8",
-    count: "320+",
+    count: "300+",
   },
 
   stats: [
-    { label: "Lake-view rooms", value: "5" },
-    { label: "Year welcoming guests", value: "Since 2018" },
-    { label: "Hectares of garden", value: "1.4" },
+    { label: "Sleeps up to", value: "20 guests" },
+    { label: "View", value: "Direct Taal" },
+    { label: "Pool", value: "Infinity edge" },
     { label: "Drive from Manila", value: "≈ 90 min" },
   ],
 
   pillars: [
     {
       title: "The view",
-      copy: "An infinity edge facing Taal Volcano, the cone framed by rolling Batangas hills.",
+      copy: "An infinity pool that ends where Taal Lake begins — volcano in the centre, palm trees framing the edge.",
     },
     {
-      title: "The quiet",
-      copy: "Five rooms only. No tour buses, no weddings without your blessing — only the breeze and the lake.",
+      title: "Designed for the whole family",
+      copy: "Two suites, a family room, a chef's kitchen, a lounge with the sound system already set up. Bring everyone.",
     },
     {
-      title: "The welcome",
-      copy: "Filipino warmth held softly: hot pandesal at sunrise, calamansi at sundown, your name remembered.",
+      title: "Filipino warmth, modern comfort",
+      copy: "Aircon in every room, fast Wi-Fi, hot water on demand — and a host who remembers your kids' names by morning.",
     },
     {
-      title: "The grounds",
-      copy: "A 1.4-hectare garden of tall mango trees, a swimming pool, a covered events hall — yours, when you want it.",
+      title: "An hour and a half from Manila",
+      copy: "Close enough for a long weekend. Far enough that you'll forget what day it is.",
     },
   ],
 
   /**
    * Placeholder testimonials — replace with verbatim Google / Facebook reviews
-   * before launch. See _verticals/hospitality.md for the scrape workflow.
-   * Names anonymised by default; opt in to real names when client supplies
-   * permission.
+   * before launch. Anonymise names by default unless the client opts in.
    */
   testimonials: [
     {
       name: "Joanna L.",
       location: "Quezon City",
       quote:
-        "Woke up to the volcano framed by the curtains. Coffee on the deck, no one else in sight. We didn't want to drive back.",
+        "Booked the whole resort for my mum's 70th. The pool at sunset, the kitchen full of cousins cooking — felt like our own private island.",
     },
     {
       name: "Marco D.",
       location: "Makati",
       quote:
-        "Booked the whole resort for our parents' golden anniversary. The team set up the lawn with paper lanterns — even the lola cried.",
+        "The infinity pool is genuinely as nice as the photos. We had eighteen people, three cars, and not a single complaint. We'll be back next December.",
     },
     {
       name: "Elise B.",
-      location: "Tagaytay regulars",
+      location: "Singapore",
       quote:
-        "We've stayed at the bigger names on the rim. This is the one we keep coming back to. Quieter, kinder, closer to the lake.",
+        "Closer to Taal than the Tagaytay rim hotels and at half the price. The host messaged us back in twenty minutes on a Sunday. Already planning a return.",
     },
     {
       name: "Pat R.",
-      location: "Singapore",
+      location: "BGC",
       quote:
-        "An hour and a half from the airport and you'd swear you were a province away. The pandesal at breakfast, the calamansi at dusk — small things, done well.",
+        "Modern, clean, well-stocked kitchen. The kids didn't want to leave the pool; we didn't want to leave the view.",
     },
   ],
 
   partners: [
     "Featured · Tara Lets Anywhere",
     "BARAKO · Top 3 Resorts in Mataas na Kahoy",
-    "Google · 4.8★ over 300 reviews",
+    "Google · 4.8★ · 300+ reviews",
     "Facebook · Highlights Resort",
   ],
 
   social: {
     facebook: "https://www.facebook.com/HighlightsResort",
-    instagram: "https://www.instagram.com/highlightslakeview",
+    instagram: "",
     pinterest: "",
     tiktok: "",
   },
@@ -135,15 +127,15 @@ export const site = {
 
   navFooter: {
     visit: [
-      { label: "Rooms & Suites", href: "/rooms" },
-      { label: "The Grounds", href: "/about#grounds" },
+      { label: "Stay options", href: "/rooms" },
+      { label: "The Pool & Grounds", href: "/about#grounds" },
       { label: "Dining", href: "/dining" },
-      { label: "Day Tours", href: "/rooms?type=day-tour" },
+      { label: "Day Tour rates", href: "/rooms" },
     ],
     celebrate: [
-      { label: "Events Hall", href: "/events" },
+      { label: "Whole-Resort Buyout", href: "/events" },
+      { label: "Birthdays & Reunions", href: "/events#reunions" },
       { label: "Weddings", href: "/events#weddings" },
-      { label: "Family Reunions", href: "/events#reunions" },
       { label: "Corporate Retreats", href: "/events#corporate" },
     ],
     explore: [

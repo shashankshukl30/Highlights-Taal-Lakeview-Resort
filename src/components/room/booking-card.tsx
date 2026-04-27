@@ -20,10 +20,10 @@ export function BookingCard({ room }: { room: Room }) {
       <div className="bg-white border border-line rounded-2xl p-6 shadow-[0_30px_60px_-30px_rgba(14,61,63,0.18)]">
         <div className="flex items-baseline justify-between mb-1">
           <span className="text-[10.5px] tracking-[0.16em] uppercase text-ash">From</span>
-          <span className="text-[11px] tracking-[0.14em] uppercase text-bamboo">{room.shortLabel}</span>
+          <span className="text-[11px] tracking-[0.14em] uppercase text-foliage">{room.shortLabel}</span>
         </div>
         <div className="flex items-baseline gap-2">
-          <span className="font-display text-[40px] md:text-[44px] tracking-[-0.02em] text-lake tabular-num">
+          <span className="font-display text-[40px] md:text-[44px] tracking-[-0.02em] text-brand tabular-num">
             {formatPHP(room.fromPHP)}
           </span>
           <span className="text-ash text-[13px]">{room.perLabel}</span>
@@ -34,22 +34,22 @@ export function BookingCard({ room }: { room: Room }) {
 
         <div className="my-5 hairline" />
 
-        <ul className="space-y-2 text-[13.5px] text-lake/80">
+        <ul className="space-y-2 text-[13.5px] text-brand/80">
           <li className="flex justify-between">
             <span className="text-ash">View</span>
-            <span className="text-lake">{room.view}</span>
+            <span className="text-brand">{room.view}</span>
           </li>
           <li className="flex justify-between">
             <span className="text-ash">Bed</span>
-            <span className="text-lake">{room.beds}</span>
+            <span className="text-brand">{room.beds}</span>
           </li>
           <li className="flex justify-between">
             <span className="text-ash">Sleeps</span>
-            <span className="text-lake">{room.guests}</span>
+            <span className="text-brand">{room.guests}</span>
           </li>
           <li className="flex justify-between">
             <span className="text-ash">Size</span>
-            <span className="text-lake">{room.size}</span>
+            <span className="text-brand">{room.size}</span>
           </li>
         </ul>
 
@@ -77,7 +77,7 @@ export function BookingCard({ room }: { room: Room }) {
         <a
           href={`tel:${site.contact.phonePrimary.replace(/\s/g, "")}`}
           onClick={() => track("tel_click", { location: "booking_card", room: room.slug })}
-          className="btn btn-ghost text-lake w-full justify-center mt-2 border-line"
+          className="btn btn-ghost text-brand w-full justify-center mt-2 border-line"
         >
           <Phone size={14} /> {site.contact.phoneDisplayPrimary}
         </a>
@@ -88,7 +88,7 @@ export function BookingCard({ room }: { room: Room }) {
             track("itinerary_download", { room: room.slug });
             window.print();
           }}
-          className="mt-4 w-full inline-flex items-center justify-center gap-2 text-[12.5px] text-ash hover:text-lake transition-colors"
+          className="mt-4 w-full inline-flex items-center justify-center gap-2 text-[12.5px] text-ash hover:text-brand transition-colors"
         >
           <Printer size={13} /> Save room page (PDF)
         </button>
@@ -160,7 +160,7 @@ function EnquireSheet({
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.25 }}
-                className="fixed inset-0 z-[110] bg-lake/60 backdrop-blur-sm"
+                className="fixed inset-0 z-[110] bg-brand/60 backdrop-blur-sm"
               />
             </Dialog.Overlay>
             <Dialog.Content asChild>
@@ -169,7 +169,7 @@ function EnquireSheet({
                 animate={{ y: 0 }}
                 exit={{ y: "100%" }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="fixed inset-x-0 bottom-0 z-[115] bg-ivory text-lake rounded-t-3xl md:rounded-3xl md:left-1/2 md:top-1/2 md:bottom-auto md:-translate-x-1/2 md:-translate-y-1/2 md:w-[min(640px,92vw)] md:max-h-[90vh] max-h-[92vh] overflow-y-auto border-t md:border border-line"
+                className="fixed inset-x-0 bottom-0 z-[115] bg-cream text-brand rounded-t-3xl md:rounded-3xl md:left-1/2 md:top-1/2 md:bottom-auto md:-translate-x-1/2 md:-translate-y-1/2 md:w-[min(640px,92vw)] md:max-h-[90vh] max-h-[92vh] overflow-y-auto border-t md:border border-line"
               >
                 <div className="p-6 md:p-9">
                   <div className="flex items-start justify-between gap-4 mb-6">
@@ -185,7 +185,7 @@ function EnquireSheet({
                     <Dialog.Close asChild>
                       <button
                         aria-label="Close"
-                        className="w-9 h-9 rounded-full border border-line text-lake/55 hover:text-lake inline-flex items-center justify-center"
+                        className="w-9 h-9 rounded-full border border-line text-brand/55 hover:text-brand inline-flex items-center justify-center"
                       >
                         ×
                       </button>
@@ -259,7 +259,7 @@ function Field({
   placeholder?: string;
 }) {
   const baseClass =
-    "w-full bg-white border border-line rounded-xl px-4 py-3 text-[14.5px] text-lake placeholder:text-ash/55 focus:outline-none focus:ring-2 focus:ring-sunset/40 focus:border-sunset transition";
+    "w-full bg-white border border-line rounded-xl px-4 py-3 text-[14.5px] text-brand placeholder:text-ash/55 focus:outline-none focus:ring-2 focus:ring-sunset/40 focus:border-sunset transition";
   return (
     <label className={`block ${className}`}>
       <span className="block text-[11px] tracking-[0.14em] uppercase text-ash mb-1.5">

@@ -78,7 +78,7 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${geist.variable} ${geistMono.variable}`}
     >
-      <body className="bg-ivory text-lake antialiased">
+      <body className="bg-cream text-brand antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={jsonldScript(organizationLD())}

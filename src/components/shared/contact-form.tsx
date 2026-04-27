@@ -60,7 +60,7 @@ function ContactFormInner() {
         <select
           name="room"
           defaultValue={initialRoom}
-          className="w-full bg-white border border-line rounded-xl px-4 py-3 text-[14.5px] text-lake focus:outline-none focus:ring-2 focus:ring-sunset/40 focus:border-sunset transition appearance-none"
+          className="w-full bg-white border border-line rounded-xl px-4 py-3 text-[14.5px] text-brand focus:outline-none focus:ring-2 focus:ring-sunset/40 focus:border-sunset transition appearance-none"
         >
           <option value="">Open — recommend something</option>
           {rooms.map((r) => (
@@ -125,7 +125,7 @@ function Field({
   placeholder?: string;
 }) {
   const baseClass =
-    "w-full bg-white border border-line rounded-xl px-4 py-3 text-[14.5px] text-lake placeholder:text-ash/55 focus:outline-none focus:ring-2 focus:ring-sunset/40 focus:border-sunset transition";
+    "w-full bg-white border border-line rounded-xl px-4 py-3 text-[14.5px] text-brand placeholder:text-ash/55 focus:outline-none focus:ring-2 focus:ring-sunset/40 focus:border-sunset transition";
   return (
     <label className="block">
       <span className="block text-[11px] tracking-[0.14em] uppercase text-ash mb-1.5">

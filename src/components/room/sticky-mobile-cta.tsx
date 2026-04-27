@@ -18,7 +18,7 @@ export function StickyMobileCTA({ room }: { room: Room }) {
         <span className="block text-[10px] tracking-[0.16em] uppercase text-ash leading-tight">
           From
         </span>
-        <span className="font-display text-[19px] text-lake leading-tight tracking-[-0.01em] tabular-num">
+        <span className="font-display text-[19px] text-brand leading-tight tracking-[-0.01em] tabular-num">
           {formatPHP(room.fromPHP)}{" "}
           <span className="text-[12px] text-ash">/ night</span>
         </span>
@@ -56,7 +56,7 @@ export function StickyMobileCTA({ room }: { room: Room }) {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="fixed inset-0 z-[110] bg-lake/55 backdrop-blur-sm"
+                  className="fixed inset-0 z-[110] bg-brand/55 backdrop-blur-sm"
                 />
               </Dialog.Overlay>
               <Dialog.Content asChild>
@@ -65,7 +65,7 @@ export function StickyMobileCTA({ room }: { room: Room }) {
                   animate={{ y: 0 }}
                   exit={{ y: "100%" }}
                   transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                  className="fixed inset-x-0 bottom-0 z-[115] bg-ivory text-lake rounded-t-3xl border-t border-line p-6 max-h-[90vh] overflow-y-auto"
+                  className="fixed inset-x-0 bottom-0 z-[115] bg-cream text-brand rounded-t-3xl border-t border-line p-6 max-h-[90vh] overflow-y-auto"
                 >
                   <Dialog.Title className="font-display text-2xl tracking-[-0.015em] mb-2">
                     Reach us about {room.name}
@@ -93,7 +93,7 @@ export function StickyMobileCTA({ room }: { room: Room }) {
                     </a>
                     <a
                       href={`tel:${site.contact.phonePrimary.replace(/\s/g, "")}`}
-                      className="btn btn-ghost text-lake border-line w-full justify-center"
+                      className="btn btn-ghost text-brand border-line w-full justify-center"
                     >
                       Call {site.contact.phoneDisplayPrimary}
                     </a>

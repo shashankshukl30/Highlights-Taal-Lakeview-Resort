@@ -67,11 +67,11 @@ export default async function RoomDetailPage({ params }: { params: Promise<{ slu
       <section className="pt-12 md:pt-16">
         <div className="container-wide">
           <nav className="flex items-center gap-2 text-[12px] tracking-[0.14em] uppercase text-ash mb-5">
-            <Link href="/" className="hover:text-lake">Home</Link>
+            <Link href="/" className="hover:text-brand">Home</Link>
             <span className="opacity-50">/</span>
-            <Link href="/rooms" className="hover:text-lake">Rooms</Link>
+            <Link href="/rooms" className="hover:text-brand">Rooms</Link>
             <span className="opacity-50">/</span>
-            <span className="text-lake">{room.name}</span>
+            <span className="text-brand">{room.name}</span>
           </nav>
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
@@ -96,7 +96,7 @@ export default async function RoomDetailPage({ params }: { params: Promise<{ slu
         <div className="container-wide grid lg:grid-cols-12 gap-10 lg:gap-14">
           <div className="lg:col-span-7 xl:col-span-8 space-y-12">
             {/* Lead body */}
-            <div className="space-y-5 text-[17px] md:text-[18px] leading-[1.7] text-lake/85 max-w-[58ch]">
+            <div className="space-y-5 text-[17px] md:text-[18px] leading-[1.7] text-brand/85 max-w-[58ch]">
               {room.body.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
@@ -118,7 +118,7 @@ export default async function RoomDetailPage({ params }: { params: Promise<{ slu
             <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
               <div>
                 <h3 className="eyebrow mb-4">In the room</h3>
-                <ul className="space-y-2 list-check text-[15px] text-lake/85">
+                <ul className="space-y-2 list-check text-[15px] text-brand/85">
                   {room.amenities.map((a) => (
                     <li key={a}>{a}</li>
                   ))}
@@ -126,7 +126,7 @@ export default async function RoomDetailPage({ params }: { params: Promise<{ slu
               </div>
               <div>
                 <h3 className="eyebrow mb-4">What&apos;s included in the rate</h3>
-                <ul className="space-y-2 list-check text-[15px] text-lake/85">
+                <ul className="space-y-2 list-check text-[15px] text-brand/85">
                   {room.inclusions.map((a) => (
                     <li key={a}>{a}</li>
                   ))}
@@ -164,7 +164,7 @@ export default async function RoomDetailPage({ params }: { params: Promise<{ slu
                 The other four are right here.
               </h2>
             </div>
-            <Link href="/rooms" className="btn btn-ink self-start md:self-end">
+            <Link href="/rooms" className="btn btn-brand self-start md:self-end">
               See all rooms <ArrowUpRight size={14} className="arrow" />
             </Link>
           </div>
@@ -179,7 +179,7 @@ export default async function RoomDetailPage({ params }: { params: Promise<{ slu
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
-                  <span className="absolute top-3 left-3 chip chip-mono bg-ivory/95 text-lake border-line">
+                  <span className="absolute top-3 left-3 chip chip-mono bg-cream/95 text-brand border-line">
                     {formatPHP(r.fromPHP)}
                     <span className="opacity-60 ml-1">/ night</span>
                   </span>
@@ -205,7 +205,7 @@ export default async function RoomDetailPage({ params }: { params: Promise<{ slu
 
 function FactPill({ icon, label }: { icon: React.ReactNode; label: string }) {
   return (
-    <span className="inline-flex items-center gap-2 text-[13px] text-lake/75 border border-line bg-ivory rounded-full px-3 py-1.5">
+    <span className="inline-flex items-center gap-2 text-[13px] text-brand/75 border border-line bg-cream rounded-full px-3 py-1.5">
       <span className="text-sunset">{icon}</span>
       {label}
     </span>

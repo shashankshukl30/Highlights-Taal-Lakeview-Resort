@@ -10,14 +10,13 @@ export function Pillars() {
             <p className="eyebrow">Why guests choose us</p>
             <h2 className="font-display text-[34px] md:text-[44px] lg:text-[52px] leading-[1.05] tracking-[-0.025em] mt-3">
               <Balancer>
-                Quiet, kind, and well-considered — the four things we promise about
-                every stay.
+                Closer to the lake than the rim. Quieter than the resort strip. Warm in the way only Filipino hospitality is.
               </Balancer>
             </h2>
             <p className="mt-5 text-ash text-[16px] leading-[1.6] max-w-[44ch]">
-              Highlights is family-run. We have five rooms, a small team, and a
-              lake we&apos;ve been waking up to for eight years. Everything else
-              follows from that.
+              We sit on the southern hills above Taal, looking across the
+              caldera at the cone. The view from Tagaytay is famous; the view
+              from here is closer, quieter, and on most days, empty.
             </p>
           </div>
           <div className="lg:col-span-7">

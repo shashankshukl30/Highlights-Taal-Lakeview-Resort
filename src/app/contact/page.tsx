@@ -38,7 +38,7 @@ export default function ContactPage() {
             <Block icon={<Phone size={16} />} title="By phone">
               <a
                 href={`tel:${site.contact.phonePrimary.replace(/\s/g, "")}`}
-                className="font-display text-[26px] md:text-[28px] tracking-[-0.01em] text-lake hover:text-sunset transition-colors"
+                className="font-display text-[26px] md:text-[28px] tracking-[-0.01em] text-brand hover:text-sunset transition-colors"
               >
                 {site.contact.phoneDisplayPrimary}
               </a>
@@ -50,7 +50,7 @@ export default function ContactPage() {
                 href={`https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent("Hi Highlights — I'd like to ask about a stay.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-display text-[26px] md:text-[28px] tracking-[-0.01em] text-lake hover:text-sunset transition-colors"
+                className="font-display text-[26px] md:text-[28px] tracking-[-0.01em] text-brand hover:text-sunset transition-colors"
               >
                 {site.contact.whatsappDisplay}
               </a>
@@ -60,7 +60,7 @@ export default function ContactPage() {
             <Block icon={<Mail size={16} />} title="By email">
               <a
                 href={`mailto:${site.contact.email}`}
-                className="font-display text-[22px] md:text-[24px] tracking-[-0.01em] text-lake hover:text-sunset transition-colors"
+                className="font-display text-[22px] md:text-[24px] tracking-[-0.01em] text-brand hover:text-sunset transition-colors"
               >
                 {site.contact.email}
               </a>
@@ -68,7 +68,7 @@ export default function ContactPage() {
             </Block>
 
             <Block icon={<MapPin size={16} />} title="Find the resort">
-              <p className="font-display text-[22px] md:text-[24px] tracking-[-0.01em] text-lake leading-tight">
+              <p className="font-display text-[22px] md:text-[24px] tracking-[-0.01em] text-brand leading-tight">
                 {site.contact.address.line1}, {site.contact.address.line2}
                 <br />
                 {site.contact.address.city}, {site.contact.address.country}

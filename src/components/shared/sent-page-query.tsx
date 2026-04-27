@@ -29,7 +29,7 @@ export function SentPageContent({ allRooms }: { allRooms: Room[] }) {
             faster, WhatsApp is the kindest channel.
           </p>
           {room && (
-            <p className="mt-6 inline-flex items-center gap-2 chip chip-bamboo">
+            <p className="mt-6 inline-flex items-center gap-2 chip chip-foliage">
               Enquiry · {room.name}
             </p>
           )}
@@ -42,7 +42,7 @@ export function SentPageContent({ allRooms }: { allRooms: Room[] }) {
             >
               <MessageCircle size={14} /> Continue on WhatsApp
             </a>
-            <Link href="/" className="btn btn-ghost text-lake border-line">
+            <Link href="/" className="btn btn-ghost text-brand border-line">
               Back to the lake
             </Link>
           </div>
@@ -68,7 +68,7 @@ export function SentPageContent({ allRooms }: { allRooms: Room[] }) {
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
-                  <span className="absolute top-3 left-3 chip chip-mono bg-ivory/95 text-lake border-line">
+                  <span className="absolute top-3 left-3 chip chip-mono bg-cream/95 text-brand border-line">
                     {formatPHP(r.fromPHP)}
                     <span className="opacity-60 ml-1">/ night</span>
                   </span>

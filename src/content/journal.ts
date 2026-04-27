@@ -1,13 +1,12 @@
 /**
- * Journal posts. Stub — add real entries as the client's writer
- * (or our team) fills the editorial calendar.
+ * Journal posts. All cover photos are from the resort.
  */
 
 export type JournalPost = {
   slug: string;
   title: string;
   excerpt: string;
-  category: "Lake" | "Kitchen" | "Garden" | "Notes";
+  category: "Lake" | "Kitchen" | "Around" | "Notes";
   date: string;
   cover: string;
   body: string;
@@ -19,11 +18,10 @@ export const journalPosts: JournalPost[] = [
     slug: "first-light-on-taal",
     title: "First light on Taal — what it actually looks like at six",
     excerpt:
-      "Most people imagine the volcano as the postcard. The morning version is quieter, slower, and worth getting up for.",
+      "Most people imagine the volcano as a postcard. The morning version is quieter, slower, and worth getting up for.",
     category: "Lake",
     date: "2026-03-12",
-    cover:
-      "https://images.unsplash.com/photo-1597040663537-9b50f8a6e2cb?auto=format&fit=crop&w=2000&q=80",
+    cover: "/photos/taal-cone.jpg",
     readMin: 4,
     body: `The first time we watched the lake at six, it was thirty minutes before either of us spoke.
 
@@ -32,34 +30,34 @@ The mist sits on the water until the sun is high enough to lift it. The cone is 
 We've watched it a thousand mornings. It is never the same morning twice.`,
   },
   {
-    slug: "what-grows-on-the-grounds",
-    title: "What grows on the grounds — fifty years of mango trees, and the bird-of-paradise that came later",
+    slug: "sundown-from-the-pool",
+    title: "Sundown from the pool — the half-hour that justifies the drive",
     excerpt:
-      "The garden was here before the resort. We've been its caretakers, mostly.",
-    category: "Garden",
+      "If you're only here for one night, this is the half-hour you came for. Time it carefully.",
+    category: "Lake",
     date: "2026-02-20",
-    cover:
-      "https://images.unsplash.com/photo-1502780402662-acc01917c84a?auto=format&fit=crop&w=2000&q=80",
-    readMin: 6,
-    body: `Three of the mango trees on the grounds are older than the resort by forty years. They were here when this was still farmland, planted by the family that sold us the land in 2017.
+    cover: "/photos/hero-sunset.jpg",
+    readMin: 3,
+    body: `The pool is east-facing, but the sky behind you turns first.
 
-The bird-of-paradise screening the Garden Room was planted by Lola Carmen — the matriarch of our cook's family — the spring we opened. The frangipani went in a year later. Each plant has a person attached.
+If you swim a slow length around six, you'll catch the high clouds going pink before the lake has had a chance to register the change. By six-fifteen the volcano is a silhouette and the water has gone from blue to gold to a colour we haven't found a word for.
 
-Our gardener, Mang Tonyo, has been here since the beginning. He'll show you which mango is sweetest if you ask.`,
+Six-thirty is when most guests reach for their phones. We try to remember to leave ours in the room.`,
   },
   {
-    slug: "filipino-breakfast",
-    title: "How to set a Filipino breakfast (and the small things we got wrong at first)",
+    slug: "the-drive-from-manila",
+    title: "The drive from Manila — the easy version",
     excerpt:
-      "Pandesal. Tapa. Longganisa. Itlog na pula. The order matters. So does the calamansi.",
-    category: "Kitchen",
+      "Ninety minutes, two highways, one careful left at a tricycle stand. Here's the route we send to first-time guests.",
+    category: "Around",
     date: "2026-01-08",
-    cover:
-      "https://images.unsplash.com/photo-1551218372-a8789b81b253?auto=format&fit=crop&w=2000&q=80",
+    cover: "/photos/driveway.jpg",
     readMin: 5,
-    body: `When we opened we tried to put an "international" breakfast on the menu. Cereals, pancakes, an omelette station. It took six months of guests politely picking at our omelettes before we admitted what we should have known: the reason they came to Batangas was for the breakfast their lola made.
+    body: `From Makati or BGC, take SLEX south past Sto. Tomas. Exit at Lipa, follow the signs into town.
 
-Now we serve a single Filipino breakfast and we serve it well. Pandesal still warm from the oven. Tapa cured the night before. Longganisa from the panaderia in town. Itlog na pula on the side. Calamansi, halved, three to a plate. Hot kapeng barako that you can smell from the patio.`,
+From Lipa, the road climbs gently for about fifteen minutes — past a panaderia we'd recommend stopping at if you haven't had pandesal yet — and then the lake suddenly appears on your right. You're nearly here.
+
+The last kilometre is a quiet residential road. Mind the dogs and the tricycles. The gate is on the right, marked with our sign.`,
   },
 ];
 

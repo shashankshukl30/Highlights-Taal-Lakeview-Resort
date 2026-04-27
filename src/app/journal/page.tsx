@@ -8,7 +8,7 @@ import { formatDateLong } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Journal",
   description:
-    "Notes from above the lake. Quiet observations from the kitchen, the garden, and the people who walk through Highlights.",
+    "Quiet notes from above the lake — observations from the kitchen, the pool, and the road up from Manila.",
 };
 
 export default function JournalPage() {
@@ -24,8 +24,8 @@ export default function JournalPage() {
             </Balancer>
           </h1>
           <p className="mt-5 text-ash text-[16px] md:text-[18px] leading-[1.6] max-w-[52ch]">
-            Quiet observations from the kitchen, the garden, and the people
-            who walk through Highlights. Posted slowly. Read whenever.
+            Quiet observations from the pool, the kitchen, and the road up from
+            Manila. Posted slowly. Read whenever.
           </p>
         </div>
       </section>
@@ -49,7 +49,7 @@ export default function JournalPage() {
               </div>
               <div className="flex flex-col justify-center">
                 <div className="flex items-center gap-3 text-[12px] tracking-[0.14em] uppercase text-ash mb-4">
-                  <span className="chip chip-bamboo">{first.category}</span>
+                  <span className="chip chip-foliage">{first.category}</span>
                   <span>{formatDateLong(first.date)}</span>
                   <span className="opacity-50">·</span>
                   <span>{first.readMin} min read</span>
@@ -73,7 +73,11 @@ export default function JournalPage() {
         <div className="container-wide">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {rest.map((p) => (
-              <Link key={p.slug} href={`/journal/${p.slug}`} className="card-editorial group">
+              <Link
+                key={p.slug}
+                href={`/journal/${p.slug}`}
+                className="card-editorial group"
+              >
                 <div className="media">
                   <Image
                     src={p.cover}

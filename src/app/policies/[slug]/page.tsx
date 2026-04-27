@@ -12,7 +12,7 @@ We don't use a real-time booking engine. Every room is held by a person, which l
 A 50% deposit confirms the room. Balance is due on arrival, in cash or card.
 
 ## Group sizes
-Each room has a stated maximum occupancy. Please respect it — adding extra people without notice means we can't prepare breakfast or bedding properly.
+Each room has a stated maximum occupancy. Please respect it — adding extra people without notice means we can't prepare bedding properly.
 
 ## Quiet hours
 We ask that the property is kept quiet from 10:00 PM to 6:30 AM. The lake is the loudest thing you should hear in the morning.
@@ -47,7 +47,7 @@ Your enquiry is emailed to our reservations inbox via Resend. Newsletter signups
 We use Vercel Analytics (privacy-friendly, no cookies) for basic pageview counts. If we have PostHog enabled (look for a banner), it sets first-party cookies for anonymous funnel analytics. You can clear them any time.
 
 ## Get in touch
-Want a copy of, or to delete, your data? Email ${"stay@highlightslakeview.com"}.
+Want a copy of, or to delete, your data? Email stay@highlightslakeview.com.
     `,
   },
 };
@@ -56,7 +56,11 @@ export async function generateStaticParams() {
   return Object.keys(POLICIES).map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const p = POLICIES[slug];
   if (!p) return {};
@@ -67,12 +71,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function PolicyPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function PolicyPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const p = POLICIES[slug];
   if (!p) notFound();
 
-  // Render simple markdown-like (## headings + paragraphs) without a deps explosion.
   const blocks = p.body
     .trim()
     .split("\n\n")

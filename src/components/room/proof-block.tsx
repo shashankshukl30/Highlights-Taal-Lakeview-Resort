@@ -56,11 +56,11 @@ export function ProofBlock({ slug }: { slug: string }) {
                   <Star key={idx} size={14} fill={idx < r.rating ? "currentColor" : "none"} />
                 ))}
               </div>
-              <blockquote className="font-display text-[18px] leading-[1.4] tracking-[-0.005em] text-lake flex-1">
+              <blockquote className="font-display text-[18px] leading-[1.4] tracking-[-0.005em] text-brand flex-1">
                 &ldquo;{r.quote}&rdquo;
               </blockquote>
               <figcaption className="mt-5 pt-4 border-t border-line text-[13px] text-ash">
-                <span className="block text-lake">{r.name}</span>
+                <span className="block text-brand">{r.name}</span>
                 <span className="text-ash/80">
                   {r.place} · via {r.source}
                 </span>

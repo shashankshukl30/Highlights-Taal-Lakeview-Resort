@@ -2,61 +2,63 @@
 
 /* ---------------------------------------------------------
    Highlights Taal Lakeview — design tokens
-   Lake teal · ivory · sunset coral · banaba gold · bamboo
-   Drawn from the Taal Volcano vista at first light.
+   Palette pulled directly from the brand logo:
+     · deep teal-blue (the type)
+     · sunset orange (palm + volcano outline)
+     · cream paper
    --------------------------------------------------------- */
 @theme {
-  /* Lake palette — deep, still water at the foot of the volcano */
-  --color-lake: #0E3D3F;
-  --color-lake-soft: #194D4F;
-  --color-lake-muted: #2C5D5E;
-  --color-lake-deepest: #051E1F;
+  /* Brand teal — straight from the logo wordmark */
+  --color-brand: #1D6075;          /* primary teal-blue */
+  --color-brand-soft: #2A7287;
+  --color-brand-deep: #114455;
+  --color-brand-darkest: #082E3B;
 
-  /* Mist — first-light haze over the caldera */
-  --color-mist: #C7D5D3;
-  --color-mist-soft: #DBE3E0;
-  --color-mist-deep: #97A8A4;
+  /* Sky / mist — derived light shades for backgrounds */
+  --color-mist: #C7D9DF;
+  --color-mist-soft: #E2EBEE;
+  --color-mist-deep: #8FA8B0;
 
-  /* Sunset accents — Tagaytay golden hour, the conversion family */
-  --color-sunset: #E07A5F;
-  --color-sunset-deep: #A14A36;
-  --color-marigold: #F3B855;
-  --color-gold: #C9A14A;
-  --color-brass: #A37B3F;
+  /* Sunset orange — straight from the palm tree + volcano */
+  --color-sunset: #E69445;          /* primary CTA */
+  --color-sunset-soft: #F1B16E;
+  --color-sunset-deep: #B66E26;
+  --color-marigold: #F2C16B;
 
-  /* Surfaces — warm Filipino paper, beautiful against deep teal */
-  --color-ivory: #F8F1E1;
-  --color-cream: #EFE3CB;
+  /* Cream surfaces — warm paper tone, friendlier than ivory */
+  --color-cream: #FBF6EC;
+  --color-cream-deep: #F2E8D2;
+  --color-paper: #FFFFFF;
 
-  /* Bamboo — secondary cool-green accent (gardens, foliage) */
-  --color-bamboo: #5C7A5A;
-  --color-bamboo-soft: #8FAA8C;
+  /* Tropical greens (foliage in the photos) — accent only */
+  --color-foliage: #4F7B5C;
+  --color-foliage-soft: #8AA88F;
 
   /* Text + lines */
-  --color-ash: #5C645C;
-  --color-line: #E0D5BA;
-  --color-ink-line: rgba(248, 241, 225, 0.14);
-  --color-ink-line-strong: rgba(248, 241, 225, 0.22);
+  --color-ink: #0E2730;             /* near-black with brand undertone */
+  --color-ash: #5A6A70;
+  --color-line: #E6DCC2;
+  --color-line-soft: #EFE6CE;
+  --color-ink-line: rgba(251, 246, 236, 0.16);
+  --color-ink-line-strong: rgba(251, 246, 236, 0.26);
 
-  /* Type ramps — Fraunces (display) + Geist (sans) + Geist Mono (numerals) */
+  /* Type ramps */
   --font-serif: var(--font-fraunces), 'Fraunces', 'Cormorant Garamond', 'Georgia', serif;
   --font-display: var(--font-fraunces), 'Fraunces', 'Cormorant Garamond', 'Georgia', serif;
   --font-sans: var(--font-geist), 'Geist', system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Easing tokens — three editorial cadences */
+  /* Easing */
   --ease-display: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-card: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-strip: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ---------------------------------------------------------
-   Base layer
-   --------------------------------------------------------- */
+/* Base */
 :root {
   color-scheme: light;
-  --background: #F8F1E1;
-  --foreground: #0E3D3F;
+  --background: #FBF6EC;
+  --foreground: #0E2730;
 }
 
 html {
@@ -81,19 +83,19 @@ body {
 
 ::selection {
   background: var(--color-sunset);
-  color: var(--color-ivory);
+  color: var(--color-paper);
 }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
-  background: rgba(92, 122, 90, 0.32);
+  background: rgba(29, 96, 117, 0.32);
   border-radius: 999px;
   transition: background 0.2s;
 }
-::-webkit-scrollbar-thumb:hover { background: var(--color-bamboo); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-brand); }
 
-/* Lenis smooth-scroll */
+/* Lenis */
 html.lenis,
 html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -101,9 +103,7 @@ html.lenis body { height: auto; }
 .lenis.lenis-stopped { overflow: clip; }
 .lenis.lenis-smooth iframe { pointer-events: none; }
 
-/* ---------------------------------------------------------
-   Display & ornament
-   --------------------------------------------------------- */
+/* Display */
 .font-display { font-family: var(--font-display); }
 .font-serif   { font-family: var(--font-serif); }
 .font-sans    { font-family: var(--font-sans); }
@@ -127,13 +127,13 @@ h1 { font-feature-settings: "ss01"; }
   color: var(--color-sunset-deep);
 }
 
-.eyebrow-ivory {
+.eyebrow-paper {
   font-family: var(--font-sans);
   font-size: 0.72rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   font-weight: 500;
-  color: rgba(248, 241, 225, 0.7);
+  color: rgba(251, 246, 236, 0.8);
 }
 
 .eyebrow-mist {
@@ -145,9 +145,7 @@ h1 { font-feature-settings: "ss01"; }
   color: var(--color-mist);
 }
 
-/* ---------------------------------------------------------
-   Layout primitives
-   --------------------------------------------------------- */
+/* Layout primitives */
 .container-x {
   width: 100%;
   max-width: 80rem;
@@ -193,52 +191,50 @@ h1 { font-feature-settings: "ss01"; }
   width: 100%;
 }
 
-/* ---------------------------------------------------------
-   Surfaces
-   --------------------------------------------------------- */
-.surface-ink {
-  background: var(--color-lake);
-  color: var(--color-ivory);
+/* Surfaces */
+.surface-brand {
+  background: var(--color-brand);
+  color: var(--color-cream);
 }
-.surface-ink ::selection {
+.surface-brand ::selection {
   background: var(--color-marigold);
-  color: var(--color-lake);
+  color: var(--color-brand);
 }
 .surface-cream {
   background: var(--color-cream);
+}
+.surface-cream-deep {
+  background: var(--color-cream-deep);
 }
 .surface-mist {
   background: var(--color-mist-soft);
 }
 
-/* Hero gradient overlay — keeps text legible without flattening photo */
+/* Hero veil — warm sunrise wash, not cold tealing */
 .hero-veil {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(14, 61, 63, 0.32) 0%, rgba(14, 61, 63, 0.22) 35%, rgba(14, 61, 63, 0.78) 100%),
-    radial-gradient(70% 60% at 30% 30%, rgba(14, 61, 63, 0) 0%, rgba(14, 61, 63, 0.42) 100%);
+    linear-gradient(180deg, rgba(8, 46, 59, 0.18) 0%, rgba(8, 46, 59, 0.10) 35%, rgba(8, 46, 59, 0.74) 100%),
+    radial-gradient(70% 60% at 70% 30%, rgba(230, 148, 69, 0.18) 0%, rgba(230, 148, 69, 0) 60%);
   pointer-events: none;
 }
 
 .cinematic-fade {
-  background: linear-gradient(180deg, transparent 0%, rgba(14, 61, 63, 0.0) 40%, rgba(14, 61, 63, 0.55) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(8, 46, 59, 0.0) 40%, rgba(8, 46, 59, 0.55) 100%);
 }
 
-/* Subtle film grain */
 .grain::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.045;
+  opacity: 0.04;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
-/* ---------------------------------------------------------
-   Buttons
-   --------------------------------------------------------- */
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -275,12 +271,12 @@ h1 { font-feature-settings: "ss01"; }
 
 .btn-primary {
   background: var(--color-sunset);
-  color: var(--color-ivory);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 8px 24px -10px rgba(224, 122, 95, 0.6);
+  color: var(--color-paper);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.18) inset, 0 8px 24px -10px rgba(230, 148, 69, 0.6);
 }
 .btn-primary:hover {
   background: var(--color-sunset-deep);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 14px 32px -12px rgba(161, 74, 54, 0.7);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.14) inset, 0 14px 32px -12px rgba(182, 110, 38, 0.7);
 }
 
 .btn-ghost {
@@ -294,23 +290,17 @@ h1 { font-feature-settings: "ss01"; }
   background: color-mix(in srgb, currentColor 6%, transparent);
 }
 
-.btn-ink {
-  background: var(--color-lake);
-  color: var(--color-ivory);
+.btn-brand {
+  background: var(--color-brand);
+  color: var(--color-cream);
 }
-.btn-ink:hover { background: var(--color-lake-soft); }
+.btn-brand:hover { background: var(--color-brand-soft); }
 
-.btn-ivory {
-  background: var(--color-ivory);
-  color: var(--color-lake);
+.btn-paper {
+  background: var(--color-paper);
+  color: var(--color-brand);
 }
-.btn-ivory:hover { background: #FFFFFF; }
-
-.btn-mist {
-  background: var(--color-mist);
-  color: var(--color-lake);
-}
-.btn-mist:hover { background: var(--color-mist-soft); }
+.btn-paper:hover { background: var(--color-cream); }
 
 .btn-whatsapp {
   background: #25D366;
@@ -328,9 +318,7 @@ h1 { font-feature-settings: "ss01"; }
   font-size: 1rem;
 }
 
-/* ---------------------------------------------------------
-   Chips
-   --------------------------------------------------------- */
+/* Chips */
 .chip {
   display: inline-flex;
   align-items: center;
@@ -342,40 +330,34 @@ h1 { font-feature-settings: "ss01"; }
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: rgba(243, 184, 85, 0.14);
+  background: rgba(230, 148, 69, 0.14);
   color: var(--color-sunset-deep);
-  border: 1px solid rgba(243, 184, 85, 0.32);
+  border: 1px solid rgba(230, 148, 69, 0.32);
   white-space: nowrap;
 }
 
-.chip-ink {
-  background: rgba(14, 61, 63, 0.06);
-  color: var(--color-lake);
-  border-color: rgba(14, 61, 63, 0.14);
+.chip-brand {
+  background: rgba(29, 96, 117, 0.08);
+  color: var(--color-brand);
+  border-color: rgba(29, 96, 117, 0.18);
 }
 
-.chip-ivory {
-  background: rgba(248, 241, 225, 0.08);
-  color: var(--color-ivory);
-  border-color: rgba(248, 241, 225, 0.22);
+.chip-paper {
+  background: rgba(251, 246, 236, 0.10);
+  color: var(--color-cream);
+  border-color: rgba(251, 246, 236, 0.26);
 }
 
-.chip-brass {
-  background: rgba(163, 123, 63, 0.12);
-  color: var(--color-brass);
-  border-color: rgba(163, 123, 63, 0.34);
+.chip-foliage {
+  background: rgba(79, 123, 92, 0.12);
+  color: var(--color-foliage);
+  border-color: rgba(79, 123, 92, 0.32);
 }
 
 .chip-mist {
-  background: rgba(199, 213, 211, 0.18);
+  background: rgba(199, 217, 223, 0.22);
   color: var(--color-mist-deep);
-  border-color: rgba(199, 213, 211, 0.4);
-}
-
-.chip-bamboo {
-  background: rgba(92, 122, 90, 0.12);
-  color: var(--color-lake-soft);
-  border-color: rgba(92, 122, 90, 0.34);
+  border-color: rgba(199, 217, 223, 0.5);
 }
 
 .chip-mono {
@@ -386,9 +368,7 @@ h1 { font-feature-settings: "ss01"; }
   font-size: 0.78rem;
 }
 
-/* ---------------------------------------------------------
-   Cards
-   --------------------------------------------------------- */
+/* Cards */
 .card-room {
   position: relative;
   display: flex;
@@ -404,8 +384,8 @@ h1 { font-feature-settings: "ss01"; }
 }
 .card-room:hover {
   transform: translateY(-6px);
-  box-shadow: 0 36px 64px -34px rgba(14, 61, 63, 0.32);
-  border-color: rgba(224, 122, 95, 0.5);
+  box-shadow: 0 36px 64px -34px rgba(8, 46, 59, 0.32);
+  border-color: rgba(230, 148, 69, 0.5);
 }
 .card-room .media {
   position: relative;
@@ -431,7 +411,7 @@ h1 { font-feature-settings: "ss01"; }
   overflow: hidden;
   border-radius: 1.25rem;
   aspect-ratio: 4 / 5;
-  background: var(--color-cream);
+  background: var(--color-cream-deep);
 }
 .card-editorial .media img { transition: transform 1.4s var(--ease-card); }
 .card-editorial:hover .media img { transform: scale(1.06); }
@@ -443,9 +423,7 @@ h1 { font-feature-settings: "ss01"; }
 }
 .card-editorial:hover .underline-grow { width: 2.5rem; }
 
-/* ---------------------------------------------------------
-   Lists
-   --------------------------------------------------------- */
+/* Lists */
 .list-marigold > li {
   position: relative;
   padding-left: 1.6rem;
@@ -459,7 +437,7 @@ h1 { font-feature-settings: "ss01"; }
   height: 0.5rem;
   border-radius: 999px;
   background: var(--color-marigold);
-  box-shadow: 0 0 0 4px rgba(243, 184, 85, 0.18);
+  box-shadow: 0 0 0 4px rgba(242, 193, 107, 0.20);
 }
 
 .list-check > li {
@@ -489,9 +467,7 @@ h1 { font-feature-settings: "ss01"; }
   font-size: 1.15em;
 }
 
-/* ---------------------------------------------------------
-   Marquee
-   --------------------------------------------------------- */
+/* Marquee */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -514,18 +490,14 @@ h1 { font-feature-settings: "ss01"; }
   .marquee-track, .marquee-track-fast { animation: none; }
 }
 
-/* ---------------------------------------------------------
-   Ken Burns
-   --------------------------------------------------------- */
+/* Ken Burns */
 @keyframes kenburns {
   0%   { transform: scale(1.05) translate3d(0,0,0); }
   100% { transform: scale(1.18) translate3d(-1.5%, -1%, 0); }
 }
 .kenburns { animation: kenburns 22s ease-out forwards; }
 
-/* ---------------------------------------------------------
-   Nav link underline
-   --------------------------------------------------------- */
+/* Nav link underline */
 .nav-link {
   position: relative;
   padding-block: 0.25rem;
@@ -552,14 +524,12 @@ h1 { font-feature-settings: "ss01"; }
   }
 }
 
-/* ---------------------------------------------------------
-   Editorial long-form prose
-   --------------------------------------------------------- */
+/* Editorial prose */
 .prose-policy {
   font-family: var(--font-sans);
   line-height: 1.7;
   font-size: 1.0625rem;
-  color: var(--color-lake);
+  color: var(--color-brand);
 }
 .prose-policy h2 {
   font-family: var(--font-display);
@@ -568,7 +538,7 @@ h1 { font-feature-settings: "ss01"; }
   line-height: 1.18;
   margin-top: 2.6rem;
   margin-bottom: 0.9rem;
-  color: var(--color-lake);
+  color: var(--color-brand);
   letter-spacing: -0.02em;
 }
 .prose-policy h3 {
@@ -595,13 +565,13 @@ h1 { font-feature-settings: "ss01"; }
   text-decoration-thickness: 1px;
 }
 .prose-policy a:hover { color: var(--color-sunset); }
-.prose-policy strong { font-weight: 600; color: var(--color-lake); }
+.prose-policy strong { font-weight: 600; color: var(--color-brand); }
 
 .prose-article {
   font-family: var(--font-sans);
   line-height: 1.75;
   font-size: 1.125rem;
-  color: var(--color-lake);
+  color: var(--color-brand);
   max-width: 38rem;
   margin-inline: auto;
 }
@@ -620,15 +590,13 @@ h1 { font-feature-settings: "ss01"; }
   font-size: 1.6rem;
   line-height: 1.25;
   letter-spacing: -0.015em;
-  color: var(--color-lake);
+  color: var(--color-brand);
   border-left: 2px solid var(--color-sunset);
   padding: 0.4rem 0 0.4rem 1.4rem;
   margin: 2rem 0;
 }
 
-/* ---------------------------------------------------------
-   Scroll progress (top of header)
-   --------------------------------------------------------- */
+/* Scroll progress */
 .scroll-progress {
   position: fixed;
   top: 0;
@@ -640,16 +608,14 @@ h1 { font-feature-settings: "ss01"; }
   pointer-events: none;
 }
 
-/* ---------------------------------------------------------
-   Sticky bottom mobile CTA bar
-   --------------------------------------------------------- */
+/* Sticky mobile CTA */
 .sticky-mobile-cta {
   position: fixed;
   inset-inline: 0;
   bottom: 0;
   z-index: 50;
   padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
-  background: rgba(248, 241, 225, 0.95);
+  background: rgba(251, 246, 236, 0.95);
   -webkit-backdrop-filter: blur(14px);
           backdrop-filter: blur(14px);
   border-top: 1px solid var(--color-line);
@@ -659,15 +625,13 @@ h1 { font-feature-settings: "ss01"; }
 }
 @media (min-width: 1024px) { .sticky-mobile-cta { display: none; } }
 
-/* ---------------------------------------------------------
-   Print CSS (room detail / itinerary saving)
-   --------------------------------------------------------- */
+/* Print CSS */
 @media print {
   header,
   footer,
   .sticky-mobile-cta,
   [data-print-hide],
-  .surface-ink {
+  .surface-brand {
     display: none !important;
   }
   .container-wide,
@@ -684,7 +648,7 @@ h1 { font-feature-settings: "ss01"; }
     color: #000 !important;
   }
   .bg-cream,
-  .bg-ivory,
+  .bg-paper,
   .surface-cream,
   .surface-mist {
     background: #fff !important;

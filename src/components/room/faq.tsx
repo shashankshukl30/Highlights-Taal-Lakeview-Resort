@@ -20,10 +20,10 @@ export function FAQ() {
             {FAQS.map((f, i) => (
               <Accordion.Item key={i} value={`q${i}`}>
                 <Accordion.Trigger className="group w-full flex items-start justify-between gap-6 py-5 text-left">
-                  <span className="font-display text-[19px] md:text-[22px] tracking-[-0.01em] text-lake group-data-[state=open]:text-sunset transition-colors">
+                  <span className="font-display text-[19px] md:text-[22px] tracking-[-0.01em] text-brand group-data-[state=open]:text-sunset transition-colors">
                     {f.q}
                   </span>
-                  <span className="mt-1 shrink-0 w-7 h-7 rounded-full border border-line text-lake/60 inline-flex items-center justify-center group-data-[state=open]:rotate-45 group-data-[state=open]:bg-sunset group-data-[state=open]:text-ivory group-data-[state=open]:border-sunset transition-all duration-300">
+                  <span className="mt-1 shrink-0 w-7 h-7 rounded-full border border-line text-brand/60 inline-flex items-center justify-center group-data-[state=open]:rotate-45 group-data-[state=open]:bg-sunset group-data-[state=open]:text-cream group-data-[state=open]:border-sunset transition-all duration-300">
                     <Plus size={14} />
                   </span>
                 </Accordion.Trigger>

@@ -37,7 +37,7 @@ export default async function JournalPostPage({ params }: { params: Promise<{ sl
       <section className="pt-36 md:pt-44 pb-12">
         <div className="container-narrow text-center">
           <div className="flex items-center justify-center gap-3 text-[11.5px] tracking-[0.14em] uppercase text-ash mb-5">
-            <span className="chip chip-bamboo">{post.category}</span>
+            <span className="chip chip-foliage">{post.category}</span>
             <span>{formatDateLong(post.date)}</span>
             <span className="opacity-50">·</span>
             <span>{post.readMin} min read</span>

@@ -13,8 +13,12 @@ export default function NotFound() {
           It happens. Try the rooms, the journal, or just come straight to us — we&apos;re happy to point the way.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Link href="/rooms" className="btn btn-primary">Browse rooms</Link>
-          <Link href="/" className="btn btn-ghost text-lake border-line">Back to home</Link>
+          <Link href="/rooms" className="btn btn-primary">
+            See the rooms
+          </Link>
+          <Link href="/" className="btn btn-ghost text-brand border-brand/30">
+            Back to home
+          </Link>
         </div>
       </div>
     </section>

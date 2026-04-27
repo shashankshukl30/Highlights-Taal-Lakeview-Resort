@@ -139,7 +139,7 @@ export function ExitIntent() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="fixed inset-0 z-[120] bg-lake/60 backdrop-blur-[2px]"
+                className="fixed inset-0 z-[120] bg-brand/60 backdrop-blur-[2px]"
               />
             </Dialog.Overlay>
             <Dialog.Content asChild>
@@ -151,7 +151,7 @@ export function ExitIntent() {
                 className="
                   fixed z-[125] inset-x-3 bottom-3
                   md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2
-                  bg-ivory text-lake rounded-3xl
+                  bg-cream text-brand rounded-3xl
                   shadow-[0_50px_100px_-30px_rgba(11,16,39,0.55)]
                   w-auto md:w-[min(560px,92vw)] max-h-[92vh] overflow-y-auto
                   border border-line
@@ -163,7 +163,7 @@ export function ExitIntent() {
                       type="button"
                       onClick={() => dismiss("x_button")}
                       aria-label="Close"
-                      className="absolute top-4 right-4 w-9 h-9 rounded-full border border-line text-lake/55 hover:text-lake hover:bg-cream inline-flex items-center justify-center transition-colors"
+                      className="absolute top-4 right-4 w-9 h-9 rounded-full border border-line text-brand/55 hover:text-brand hover:bg-cream inline-flex items-center justify-center transition-colors"
                     >
                       <X size={15} />
                     </button>
@@ -176,7 +176,7 @@ export function ExitIntent() {
                         You&apos;re on the list.
                       </Dialog.Title>
                       <Dialog.Description className="mt-3 text-ash text-[15px] leading-[1.65] max-w-sm mx-auto">
-                        We&apos;ll write when the lake feels worth writing about.
+                        We&apos;ll write when the lake is worth writing about.
                         No promotions, no spam.
                       </Dialog.Description>
                       <button
@@ -215,7 +215,7 @@ export function ExitIntent() {
                             }}
                             aria-label="Email address"
                             aria-invalid={status === "error"}
-                            className="flex-1 bg-white border border-line rounded-full px-5 py-3 text-[15px] text-lake focus:outline-none focus:ring-2 focus:ring-sunset/40 focus:border-sunset transition"
+                            className="flex-1 bg-white border border-line rounded-full px-5 py-3 text-[15px] text-brand focus:outline-none focus:ring-2 focus:ring-sunset/40 focus:border-sunset transition"
                           />
                           <button
                             type="submit"

@@ -21,7 +21,7 @@ export function Gallery({ images, alt }: { images: string[]; alt: string }) {
 
   return (
     <section
-      className="relative bg-lake-deepest overflow-hidden"
+      className="relative bg-brand-darkest overflow-hidden"
       aria-label="Room photo gallery"
     >
       <div ref={emblaRef} className="overflow-hidden">
@@ -47,7 +47,7 @@ export function Gallery({ images, alt }: { images: string[]; alt: string }) {
         type="button"
         onClick={() => embla?.scrollPrev()}
         aria-label="Previous photo"
-        className="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ivory/90 hover:bg-ivory text-lake inline-flex items-center justify-center transition-colors backdrop-blur-sm"
+        className="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-cream/90 hover:bg-cream text-brand inline-flex items-center justify-center transition-colors backdrop-blur-sm"
       >
         <ChevronLeft size={18} />
       </button>
@@ -55,13 +55,13 @@ export function Gallery({ images, alt }: { images: string[]; alt: string }) {
         type="button"
         onClick={() => embla?.scrollNext()}
         aria-label="Next photo"
-        className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ivory/90 hover:bg-ivory text-lake inline-flex items-center justify-center transition-colors backdrop-blur-sm"
+        className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-cream/90 hover:bg-cream text-brand inline-flex items-center justify-center transition-colors backdrop-blur-sm"
       >
         <ChevronRight size={18} />
       </button>
 
       {/* Counter */}
-      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 chip chip-mono bg-lake/55 backdrop-blur-md text-ivory border-ivory/20">
+      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 chip chip-mono bg-brand/55 backdrop-blur-md text-cream border-cream/20">
         <span className="tabular-num">{String(active + 1).padStart(2, "0")}</span>
         <span className="opacity-50">/</span>
         <span className="tabular-num opacity-70">{String(images.length).padStart(2, "0")}</span>

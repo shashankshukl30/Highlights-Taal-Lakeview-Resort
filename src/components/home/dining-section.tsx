@@ -8,12 +8,12 @@ export function DiningSection() {
     <section className="section surface-cream">
       <div className="container-wide">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 order-2 lg:order-1">
             <div className="grid grid-cols-2 gap-3 md:gap-4">
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1551218372-a8789b81b253?auto=format&fit=crop&w=1400&q=85"
-                  alt="Filipino breakfast served on the patio: pandesal, tapa, longganisa, calamansi"
+                  src="/photos/kitchen.jpg"
+                  alt="The fully-equipped resort kitchen with marble counters"
                   fill
                   sizes="(max-width: 1024px) 50vw, 30vw"
                   className="object-cover"
@@ -21,8 +21,8 @@ export function DiningSection() {
               </div>
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mt-12">
                 <Image
-                  src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=85"
-                  alt="Hot kapeng barako being poured from a clay pot"
+                  src="/photos/lounge.jpg"
+                  alt="The shared lounge with smart TV and sound system"
                   fill
                   sizes="(max-width: 1024px) 50vw, 30vw"
                   className="object-cover"
@@ -31,29 +31,29 @@ export function DiningSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-5">
-            <p className="eyebrow">The kitchen</p>
+          <div className="lg:col-span-5 order-1 lg:order-2">
+            <p className="eyebrow">The kitchen + lounge</p>
             <h2 className="font-display text-[34px] md:text-[44px] lg:text-[52px] leading-[1.05] tracking-[-0.025em] mt-3">
               <Balancer>
-                Filipino breakfast, served the way your <span className="italic font-light">lola</span> would.
+                Cook for everyone. Or don&apos;t — Lipa town is four kilometres down the hill.
               </Balancer>
             </h2>
             <p className="mt-5 text-ash text-[16px] leading-[1.65]">
-              Pandesal still warm from the oven at six. Tapa cured the night
-              before. Longganisa from the panaderia in Lipa town, four kilometres
-              down the hill. Itlog na pula on the side. Calamansi, halved, three
-              to a plate. Kapeng barako you can smell from the patio.
+              The resort has a fully-equipped kitchen — gas stove, oven,
+              full-size fridge, the kapeng barako already on the counter — and a
+              dining area that seats fourteen. Most of our guests cook a long
+              breakfast and head out for dinner.
             </p>
-            <p className="mt-4 text-ash text-[15px] leading-[1.65] italic">
-              Lunch and dinner are à la carte from 11 to 9 — sinigang, kare-kare,
-              grilled tilapia from the lake, the things you&apos;d cook at home if
-              you had the time.
+            <p className="mt-4 text-ash text-[15px] leading-[1.65]">
+              We can also arrange catering for groups (Filipino fiesta, plated
+              Western, or a long-table family-style spread). Tell us when you
+              reach out and we&apos;ll send menu options.
             </p>
             <Link
               href="/dining"
-              className="btn btn-ghost text-lake mt-8"
+              className="btn btn-ghost text-brand mt-8 border-brand/30"
             >
-              See the menu <ArrowUpRight size={14} className="arrow" />
+              See the kitchen <ArrowUpRight size={14} className="arrow" />
             </Link>
           </div>
         </div>

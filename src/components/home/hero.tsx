@@ -11,19 +11,19 @@ import { track } from "@/lib/analytics";
 
 const SLIDES = [
   {
-    src: "https://images.unsplash.com/photo-1597040663537-9b50f8a6e2cb?auto=format&fit=crop&w=2400&q=85",
-    alt: "Taal Volcano at first light, mist lifting off the lake",
-    caption: "First light · Taal Volcano",
+    src: "/photos/hero-sunset.jpg",
+    alt: "Sunset over Taal Lake from the infinity pool at Highlights",
+    caption: "Sunset · From the pool",
   },
   {
-    src: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2400&q=85",
-    alt: "An open guest room with floor-to-ceiling glass facing the lake",
-    caption: "The Infinity Suite",
+    src: "/photos/aerial.jpg",
+    alt: "Aerial view of Highlights showing the pool and Taal Lake",
+    caption: "The property · From above",
   },
   {
-    src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=2400&q=85",
-    alt: "Garden patio under a fifty-year-old mango tree",
-    caption: "The mango canopy",
+    src: "/photos/pool-day.jpg",
+    alt: "Infinity pool with Taal Lake on a sunny day",
+    caption: "The pool · Sunny day",
   },
 ];
 
@@ -40,7 +40,7 @@ export function Hero() {
   }, [reduceMotion]);
 
   return (
-    <section className="relative w-full min-h-[92svh] overflow-hidden bg-lake-deepest text-ivory grain">
+    <section className="relative w-full min-h-[92svh] overflow-hidden bg-brand-darkest text-cream grain">
       {/* Photo crossfade stack */}
       {SLIDES.map((s, i) => (
         <motion.div
@@ -58,7 +58,7 @@ export function Hero() {
             priority={i === 0}
             sizes="100vw"
             className={`object-cover ${active === i && !reduceMotion ? "kenburns" : ""}`}
-            quality={85}
+            quality={88}
           />
         </motion.div>
       ))}
@@ -74,17 +74,17 @@ export function Hero() {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="eyebrow-mist"
         >
-          Mataas na Kahoy · Batangas · Above Taal
+          Mataas na Kahoy · Batangas · Above Taal Lake
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
-          className="font-display mt-5 text-[44px] sm:text-[56px] md:text-[78px] lg:text-[88px] leading-[1.02] tracking-[-0.025em] max-w-[18ch]"
+          className="font-display mt-5 text-[44px] sm:text-[56px] md:text-[78px] lg:text-[92px] leading-[1.02] tracking-[-0.025em] max-w-[18ch]"
         >
           <Balancer>
-            A quiet stay <span className="italic font-light">above the lake.</span>
+            Where Taal greets <span className="italic font-light">every morning.</span>
           </Balancer>
         </motion.h1>
 
@@ -92,12 +92,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.18 }}
-          className="mt-6 max-w-[44ch] text-ivory/85 text-[17px] md:text-[19px] leading-[1.55]"
+          className="mt-6 max-w-[46ch] text-cream/85 text-[17px] md:text-[19px] leading-[1.55]"
         >
           <Balancer>
-            Five rooms above Taal Volcano. An infinity edge over the caldera, a
-            mango-shaded garden, and breakfast served the way your lola would —
-            ninety minutes from Manila, a long way from anywhere else.
+            A modern Filipino resort high above Taal Lake — three suites, a family
+            room, an infinity pool with a view that does the rest. Ninety minutes
+            from Manila. Yours, by the room or whole.
           </Balancer>
         </motion.p>
 
@@ -113,7 +113,7 @@ export function Hero() {
             onClick={() => track("cta_click", { id: "hero_browse_rooms", location: "hero" })}
             className="btn btn-lg btn-primary"
           >
-            Browse rooms <ArrowUpRight size={15} className="arrow" />
+            See the rooms <ArrowUpRight size={15} className="arrow" />
           </Link>
           <a
             href={`https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent(
@@ -122,7 +122,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track("wa_click", { location: "hero" })}
-            className="btn btn-lg btn-ghost text-ivory border-ivory/40"
+            className="btn btn-lg btn-ghost text-cream border-cream/40"
           >
             <MessageCircle size={15} /> WhatsApp us
           </a>
@@ -133,16 +133,16 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.5 }}
-          className="mt-auto pt-12 grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-6 text-[12.5px] text-ivory/75"
+          className="mt-auto pt-12 grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-6 text-[12.5px] text-cream/75"
         >
           <InfoRow label="Drive from Manila" value="≈ 90 min" />
-          <InfoRow label="Rooms" value="5 only" />
-          <InfoRow label="View" value="Direct Taal Volcano" />
-          <InfoRow label="Founded" value="2018, family-run" />
+          <InfoRow label="Sleeps up to" value="16 guests" />
+          <InfoRow label="View" value="Direct Taal" />
+          <InfoRow label="Pool" value="Infinity edge" />
         </motion.div>
 
         {/* Slide indicator */}
-        <div className="absolute bottom-6 right-5 md:right-8 flex items-center gap-2.5 text-ivory/65 text-[11.5px] tracking-[0.18em] uppercase">
+        <div className="absolute bottom-6 right-5 md:right-8 flex items-center gap-2.5 text-cream/65 text-[11.5px] tracking-[0.18em] uppercase">
           <span>{SLIDES[active].caption}</span>
           <div className="flex gap-1.5 ml-2">
             {SLIDES.map((_, i) => (
@@ -152,7 +152,7 @@ export function Hero() {
                 aria-label={`Show slide ${i + 1}`}
                 onClick={() => setActive(i)}
                 className={`h-[2px] transition-all ${
-                  active === i ? "w-7 bg-marigold" : "w-3.5 bg-ivory/35 hover:bg-ivory/60"
+                  active === i ? "w-7 bg-marigold" : "w-3.5 bg-cream/35 hover:bg-cream/60"
                 }`}
               />
             ))}
@@ -164,7 +164,7 @@ export function Hero() {
           href={site.contact.mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute top-24 md:top-28 right-5 md:right-8 hidden md:inline-flex items-center gap-2 text-[12px] text-ivory/70 hover:text-ivory border border-ivory/20 hover:border-ivory/40 rounded-full pl-3 pr-3.5 py-1.5 backdrop-blur-md bg-lake/15 transition-colors"
+          className="absolute top-24 md:top-28 right-5 md:right-8 hidden md:inline-flex items-center gap-2 text-[12px] text-cream/70 hover:text-cream border border-cream/20 hover:border-cream/40 rounded-full pl-3 pr-3.5 py-1.5 backdrop-blur-md bg-brand/15 transition-colors"
         >
           <MapPin size={12} /> Open in Maps
         </a>
@@ -176,10 +176,10 @@ export function Hero() {
 function InfoRow({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <span className="block uppercase tracking-[0.16em] text-[10px] text-ivory/55 mb-1">
+      <span className="block uppercase tracking-[0.16em] text-[10px] text-cream/55 mb-1">
         {label}
       </span>
-      <span className="font-display text-[18px] md:text-[20px] text-ivory tracking-[-0.01em]">
+      <span className="font-display text-[18px] md:text-[20px] text-cream tracking-[-0.01em]">
         {value}
       </span>
     </div>
