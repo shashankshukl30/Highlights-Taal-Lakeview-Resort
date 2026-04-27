@@ -230,13 +230,17 @@ h1 .italic, h2 .italic, h3 .italic,
   background: var(--color-mist-soft);
 }
 
-/* Hero veil — warm sunrise wash, not cold tealing */
+/* Hero veil — keeps text legible without crushing the photo. The bottom
+   intentionally ramps from 0% to 0.55, then gives way at the very bottom
+   so the infinity pool / property edge stays visible. The left side
+   carries a soft right-to-left wash anchoring the headline copy. */
 .hero-veil {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(8, 46, 59, 0.18) 0%, rgba(8, 46, 59, 0.10) 35%, rgba(8, 46, 59, 0.74) 100%),
-    radial-gradient(70% 60% at 70% 30%, rgba(230, 148, 69, 0.18) 0%, rgba(230, 148, 69, 0) 60%);
+    linear-gradient(180deg, rgba(8, 46, 59, 0.40) 0%, rgba(8, 46, 59, 0.05) 28%, rgba(8, 46, 59, 0.0) 55%, rgba(8, 46, 59, 0.45) 100%),
+    linear-gradient(90deg, rgba(8, 46, 59, 0.55) 0%, rgba(8, 46, 59, 0.18) 38%, rgba(8, 46, 59, 0.0) 70%),
+    radial-gradient(70% 60% at 70% 30%, rgba(230, 148, 69, 0.16) 0%, rgba(230, 148, 69, 0) 60%);
   pointer-events: none;
 }
 

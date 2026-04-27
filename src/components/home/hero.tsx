@@ -16,6 +16,8 @@ type Slide = {
   /** Headline shown above this slide. The italic span gets the cursive Fraunces. */
   head: { lead: string; accent: string };
   sub: string;
+  /** object-position so the pool / property stays in frame on tall heroes. */
+  position: string;
 };
 
 const SLIDES: Slide[] = [
@@ -25,13 +27,15 @@ const SLIDES: Slide[] = [
     caption: "Sunset · From the pool",
     head: { lead: "Where the sun sets", accent: "over the lake." },
     sub: "Forty-five minutes of pink sky, every clear evening, from a pool that looks straight at the volcano.",
+    position: "center 78%",
   },
   {
     src: "/photos/aerial.jpg",
-    alt: "Aerial view of Highlights showing the pool and Taal Lake",
+    alt: "Aerial view of Highlights showing the infinity pool and Taal Lake",
     caption: "The property · From above",
     head: { lead: "Where the family", accent: "gathers." },
     sub: "Three suites, a family room, a pool you won't get out of, and Taal in the distance — yours, by the room or whole.",
+    position: "center 70%",
   },
   {
     src: "/photos/pool-day.jpg",
@@ -39,6 +43,7 @@ const SLIDES: Slide[] = [
     caption: "The pool · Sunny day",
     head: { lead: "Where Taal greets", accent: "every morning." },
     sub: "Ninety minutes from Manila, a long way from anywhere else. Wake up to a view you came for.",
+    position: "center 75%",
   },
 ];
 
@@ -83,6 +88,7 @@ export function Hero() {
             priority={active === 0}
             sizes="100vw"
             className="object-cover"
+            style={{ objectPosition: slide.position }}
             quality={90}
           />
         </motion.div>
