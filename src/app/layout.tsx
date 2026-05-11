@@ -32,8 +32,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://highlightslakeview.com"),
+  // Title kept to the SEO sweet spot of 50–60 characters so Google
+  // doesn't truncate it in search results. The previous default
+  // (name + tagline) landed at 66 chars and got truncated.
   title: {
-    default: `${site.brand.name} — ${site.brand.tagline}`,
+    default: `${site.brand.name} | Batangas Boutique Resort`,
     template: `%s · ${site.brand.shortName}`,
   },
   description: site.brand.longTagline,
@@ -49,18 +52,32 @@ export const metadata: Metadata = {
     "Lipa staycation",
     "events venue Batangas",
   ],
+  // Social-share preview. images is the field WhatsApp / iMessage /
+  // Slack / Twitter look at when a guest pastes the link. Without it,
+  // the preview card is blank — and a blank card kills the click-through
+  // rate on every share. Using the existing hero-sunset.jpg which is
+  // already in /public/photos/.
   openGraph: {
     type: "website",
     siteName: site.brand.name,
-    title: `${site.brand.name} — ${site.brand.tagline}`,
+    title: `${site.brand.name} | Batangas Boutique Resort`,
     description: site.brand.longTagline,
     url: "https://highlightslakeview.com",
     locale: "en_PH",
+    images: [
+      {
+        url: "/photos/hero-sunset.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${site.brand.name} — Taal Volcano sunset view`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.brand.name} — ${site.brand.tagline}`,
+    title: `${site.brand.name} | Batangas Boutique Resort`,
     description: site.brand.longTagline,
+    images: ["/photos/hero-sunset.jpg"],
   },
   robots: { index: true, follow: true },
 };
@@ -75,7 +92,12 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${geist.variable} ${geistMono.variable}`}
     >
-      <body className="bg-cream text-brand antialiased">
+      {/* JSON-LD structured data — placed in <head> so every audit tool
+       *  (including ones that only scan the head element) detects it.
+       *  Google reads JSON-LD anywhere in the document but a head
+       *  placement is the textbook spot + maximises discovery by
+       *  cheaper third-party audit crawlers. */}
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={jsonldScript(organizationLD())}
@@ -84,6 +106,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={jsonldScript(websiteLD())}
         />
+      </head>
+      <body className="bg-cream text-brand antialiased">
         <LenisRoot />
         <SiteHeader />
         <main id="main">{children}</main>
